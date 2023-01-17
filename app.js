@@ -67,7 +67,7 @@ app.post("/deleteMovie", (req, res) => {
     if (Movies.myFavoriteMovies.find(movies => movies.name.toLowerCase() == movie.name.toLowerCase())) {
         let movieIndex = Movies.myFavoriteMovies.findIndex(m => m.name.toLowerCase() == movie.name.toLowerCase())
         Movies.myFavoriteMovies.splice(movieIndex, 1)
-        res.write(`${movie.name} was deleted from the list`)
+        res.write(`${movie.name.toUpperCase()} was deleted from the list`)
     } else {
         res.write(`${movie.name.toUpperCase()} Is not in the list`)
     }
