@@ -69,7 +69,7 @@ app.post("/deleteMovie", (req, res) => {
         Movies.myFavoriteMovies.splice(movieIndex, 1)
         res.write(`${movie.name} was deleted from the list`)
     } else {
-        res.write(`${movie.name} is not in the list`)
+        res.write(`${movie.name.toUpperCase()} Is not in the list`)
     }
     res.send()
 })
